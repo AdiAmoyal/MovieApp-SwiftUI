@@ -40,7 +40,7 @@ extension MovieCardView {
             Spacer()
             
             VStack(alignment: .leading, spacing: 10) {
-                Text(movie.name)
+                Text(movie.title)
                     .font(.title3)
                     .bold()
                 
@@ -48,7 +48,7 @@ extension MovieCardView {
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
 
-                    Text(String(format: "%.1f", movie.rate))
+                    Text(String(format: "%.1f", movie.voteAverage))
                         .font(.headline)
                         .foregroundColor(.secondary)
                 }

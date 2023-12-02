@@ -53,19 +53,19 @@ extension MovieDetailView {
     
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(movie.name)
+            Text(movie.title)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
             
             HStack {
                 HStack(spacing: 4) {
                     Image(systemName: "star.fill")
-                    Text("\(String(format: "%.1f", movie.rate))")
+                    Text("\(String(format: "%.1f", movie.voteAverage))")
                 }
                 
                 Spacer()
                 
-                Text(movie.realseDate)
+                Text(movie.releaseDate)
             }
             .font(.title3)
             .foregroundColor(.secondary)
@@ -75,7 +75,7 @@ extension MovieDetailView {
     }
     
     private var descriptionSection: some View {
-        Text(movie.description)
+        Text(movie.overview)
             .font(.subheadline)
             .foregroundColor(.secondary)
     }

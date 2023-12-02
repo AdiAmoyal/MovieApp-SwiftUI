@@ -8,5 +8,12 @@
 import Foundation
 
 struct TestData {
-    let movie = Movie(id: 1, name: "Five Nights at Freddy's", description: "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.", rate: 8.5, realseDate: "2023-10-25", image: "/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg")
+    let movie = Movie(id: 1, adult: false, overview: "Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.", posterPath: "/pD6sL4vntUOXHmuvJPPZAgvyfd9.jpg", releaseDate: "2023-11-17", title: "Leo", voteAverage: 7)
 }
+
+
+/*
+ 
+ {"adult":false, "id":1075794,"original_language":"en","original_title":"Leo","overview":"Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.","popularity":1661.593,"poster_path":"/pD6sL4vntUOXHmuvJPPZAgvyfd9.jpg","release_date":"2023-11-17","title":"Leo","video":false,"vote_average":7.7,"vote_count":317}
+ 
+ */

@@ -9,23 +9,21 @@ import Foundation
 
 struct Movie: Decodable, Hashable, Identifiable {
     let id: Int
-    let name: String
-    let description: String
-    let rate: Double
-    let realseDate: String
-    let image: String
+    let adult: Bool
+    let overview: String
+    let posterPath, releaseDate, title: String
+    let voteAverage: Double
+    
     var imageURL: URL {
         let url = URL(string: "https://image.tmdb.org/t/p/w300")
-        return (url?.appending(path: image))!
+        return (url?.appending(path: posterPath))!
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case name = "title"
-        case description = "overview"
-        case rate = "vote_average"
-        case realseDate = "release_date"
-        case image = "poster_path"
+        case id, adult, overview, title
+        case posterPath = "poster_path"
+        case releaseDate = "release_date"
+        case voteAverage = "vote_average"
     }
 }
 

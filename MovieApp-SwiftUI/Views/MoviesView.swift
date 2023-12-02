@@ -51,6 +51,12 @@ extension MoviesView {
         }
         .padding(7)
     }
+    
+    private var watchListView: some View {
+        List {
+            
+        }
+    }
 }
 
 struct MoviesView_Previews: PreviewProvider {
