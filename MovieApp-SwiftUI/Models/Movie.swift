@@ -26,13 +26,3 @@ struct Movie: Decodable, Hashable, Identifiable {
         case voteAverage = "vote_average"
     }
 }
-
-/*
- {
-   "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
-   "poster_path": "/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg",
-   "release_date": "2023-10-25",
-   "title": "Five Nights at Freddy's",
-   "vote_average": 8.5,
- }
- */

@@ -11,6 +11,7 @@ struct MoviesView: View {
     
     @EnvironmentObject var vm: MoviesViewModel
     @State var selectedTab: Int = 0
+    @State var searchText: String = ""
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -36,27 +37,51 @@ struct MoviesView: View {
 }
 
 extension MoviesView {
+//    private var HomeView: some View {
+//        ZStack {
+//            ScrollView {
+//                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 15) {
+//                    ForEach(vm.movies) { movie in
+//                        MovieCardView(movie: movie)
+//                            .onTapGesture {
+//                                vm.showMovieDetail = movie
+//                            }
+//                    }
+//                }
+//            }
+//        }
+//        .padding(7)
+//    }
+    
     private var HomeView: some View {
-        ZStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 15) {
+        VStack {
+            // Search bar
+            SearchBarView(searchText: $searchText)
+            
+            nowInCinema
+                .padding(.horizontal)
+            
+            Spacer()
+        }
+    }
+    
+    private var nowInCinema: some View {
+        VStack(alignment: .leading) {
+            Text("Now in cinema")
+                .font(.title2)
+                .bold()
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
                     ForEach(vm.movies) { movie in
                         MovieCardView(movie: movie)
-                            .onTapGesture {
-                                vm.showMovieDetail = movie
-                            }
+                            .padding(.trailing, 7)
                     }
                 }
             }
         }
-        .padding(7)
     }
     
-    private var watchListView: some View {
-        List {
-            
-        }
-    }
 }
 
 struct MoviesView_Previews: PreviewProvider {

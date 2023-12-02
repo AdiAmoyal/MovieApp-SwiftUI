@@ -31,8 +31,8 @@ struct MovieDetailView: View {
         }
         .ignoresSafeArea()
         .background(.ultraThinMaterial)
-        .overlay(alignment: .topLeading) {
-            closeButton
+        .overlay(alignment: .top) {
+            header
         }
     }
 }
@@ -80,20 +80,28 @@ extension MovieDetailView {
             .foregroundColor(.secondary)
     }
     
-    private var closeButton: some View {
-        Button {
-            vm.showMovieDetail = nil
-        } label: {
-            Image(systemName: "xmark")
-                .font(.headline)
+    private var header: some View {
+        HStack {
+            Button {
+                vm.showMovieDetail = nil
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.headline)
+                    .padding(16)
+                    .foregroundColor(.primary)
+                    .background(.thickMaterial)
+                    .cornerRadius(10)
+                    .shadow(radius: 4)
+                    .padding()
+            }
+            
+            Spacer()
+            
+            Image(systemName: "heart.fill")
+                .foregroundColor(.red)
+                .font(.title)
                 .padding(16)
-                .foregroundColor(.primary)
-                .background(.thickMaterial)
-                .cornerRadius(10)
-                .shadow(radius: 4)
-                .padding()
         }
-
     }
 }
 

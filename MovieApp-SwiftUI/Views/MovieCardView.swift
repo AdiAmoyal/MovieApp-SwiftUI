@@ -14,10 +14,9 @@ struct MovieCardView: View {
     var body: some View {
         ZStack {
             image
-            
             movieDetails
         }
-        .frame(width: (UIScreen.main.bounds.width / 2) * 0.88, height: 280)
+        .frame(width: (UIScreen.main.bounds.width / 2) * 0.88, height: 290)
         .cornerRadius(10)
     }
 }
@@ -44,15 +43,23 @@ extension MovieCardView {
                     .font(.title3)
                     .bold()
                 
-                HStack(spacing: 4) {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
+                HStack {
+                    HStack(spacing: 4) {
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
 
-                    Text(String(format: "%.1f", movie.voteAverage))
-                        .font(.headline)
-                        .foregroundColor(.secondary)
+                        Text(String(format: "%.1f", movie.voteAverage))
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.red)
+                        
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
             }
             .padding(10)
             .frame(height: 90)
