@@ -58,30 +58,12 @@ extension MoviesView {
             // Search bar
             SearchBarView(searchText: $searchText)
             
-            nowInCinema
+            MovieCarouselView(title: "Now in cinema", movies: vm.movies, showMovieDetails: $vm.showMovieDetail)
                 .padding(.horizontal)
             
             Spacer()
         }
     }
-    
-    private var nowInCinema: some View {
-        VStack(alignment: .leading) {
-            Text("Now in cinema")
-                .font(.title2)
-                .bold()
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(vm.movies) { movie in
-                        MovieCardView(movie: movie)
-                            .padding(.trailing, 7)
-                    }
-                }
-            }
-        }
-    }
-    
 }
 
 struct MoviesView_Previews: PreviewProvider {

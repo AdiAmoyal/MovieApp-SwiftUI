@@ -38,9 +38,9 @@ extension MovieCardView {
         VStack {
             Spacer()
             
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text(movie.title)
-                    .font(.title3)
+                    .font(.headline)
                     .bold()
                 
                 HStack {
@@ -49,7 +49,6 @@ extension MovieCardView {
                             .foregroundColor(.yellow)
 
                         Text(String(format: "%.1f", movie.voteAverage))
-                            .font(.headline)
                             .foregroundColor(.secondary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -58,11 +57,12 @@ extension MovieCardView {
                     
                     Image(systemName: "heart.fill")
                         .foregroundColor(.red)
-                        
                 }
+                .font(.callout)
+                .bold()
             }
             .padding(10)
-            .frame(height: 90)
+            .frame(height: 75)
             .background(.thinMaterial.opacity(0.8))
             .cornerRadius(5)
             .shadow(color: Color.black, radius: 10)

@@ -15,7 +15,7 @@ struct Movie: Decodable, Hashable, Identifiable {
     let voteAverage: Double
     
     var imageURL: URL {
-        let url = URL(string: "https://image.tmdb.org/t/p/w300")
+        let url = URL(string: "https://image.tmdb.org/t/p/w200")
         return (url?.appending(path: posterPath))!
     }
     
