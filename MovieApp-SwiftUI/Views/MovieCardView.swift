@@ -73,6 +73,6 @@ extension MovieCardView {
 
 struct MovieCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCardView(movie: TestData().movie)
+        MovieCardView(movie: dev.movie)
     }
 }

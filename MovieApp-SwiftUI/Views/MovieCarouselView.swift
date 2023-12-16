@@ -35,6 +35,6 @@ struct MovieCarouselView: View {
 
 struct MovieCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCarouselView(title: "Now in cinema", movies: [TestData().movie], showMovieDetails: .constant(nil))
+        MovieCarouselView(title: "Now in cinema", movies: [dev.movie], showMovieDetails: .constant(nil))
     }
 }

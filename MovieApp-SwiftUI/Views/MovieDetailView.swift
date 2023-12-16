@@ -110,7 +110,7 @@ extension MovieDetailView {
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: TestData().movie)
+        MovieDetailView(movie: dev.movie)
             .environmentObject(MoviesViewModel())
     }
 }
