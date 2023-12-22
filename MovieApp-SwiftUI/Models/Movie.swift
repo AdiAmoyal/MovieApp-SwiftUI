@@ -14,9 +14,8 @@ struct Movie: Decodable, Hashable, Identifiable {
     let posterPath, releaseDate, title: String
     let voteAverage: Double
     
-    var imageURL: URL {
-        let url = URL(string: "https://image.tmdb.org/t/p/w200")
-        return (url?.appending(path: posterPath))!
+    var image: String {
+        "https://image.tmdb.org/t/p/w200\(posterPath)"
     }
     
     enum CodingKeys: String, CodingKey {

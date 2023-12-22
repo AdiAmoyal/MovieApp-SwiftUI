@@ -13,7 +13,8 @@ struct MovieCardView: View {
 
     var body: some View {
         ZStack {
-            image
+            MovieImageView(movie: movie)
+                .frame(width: (UIScreen.main.bounds.width / 2) * 0.9)
             movieDetails
         }
         .frame(width: (UIScreen.main.bounds.width / 2) * 0.88, height: 290)
@@ -22,17 +23,6 @@ struct MovieCardView: View {
 }
 
 extension MovieCardView {
-    
-    private var image: some View {
-        AsyncImage(url: movie.imageURL) { returnedImage in
-            returnedImage
-                .resizable()
-                .scaledToFill()
-        } placeholder: {
-            ProgressView()
-        }
-        .frame(width: (UIScreen.main.bounds.width / 2) * 0.9)
-    }
     
     private var movieDetails: some View {
         VStack {

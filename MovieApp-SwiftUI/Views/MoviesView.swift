@@ -37,21 +37,6 @@ struct MoviesView: View {
 }
 
 extension MoviesView {
-//    private var HomeView: some View {
-//        ZStack {
-//            ScrollView {
-//                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 15) {
-//                    ForEach(vm.movies) { movie in
-//                        MovieCardView(movie: movie)
-//                            .onTapGesture {
-//                                vm.showMovieDetail = movie
-//                            }
-//                    }
-//                }
-//            }
-//        }
-//        .padding(7)
-//    }
     
     private var HomeView: some View {
         VStack {
@@ -64,6 +49,7 @@ extension MoviesView {
             Spacer()
         }
     }
+    
 }
 
 struct MoviesView_Previews: PreviewProvider {

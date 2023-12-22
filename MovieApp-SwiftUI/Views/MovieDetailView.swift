@@ -15,7 +15,7 @@ struct MovieDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
-                imageSection
+                MovieImageView(movie: movie)
                     .frame(height: 560)
                     .shadow(color: Color.black.opacity(0.3) ,radius: 20, x: 0, y: 10)
                 
@@ -38,19 +38,7 @@ struct MovieDetailView: View {
 }
 
 extension MovieDetailView {
-    
-    private var imageSection: some View {
-        AsyncImage(url: movie.imageURL) { image in
-            image
-                .resizable()
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width)
-                .clipped()
-        } placeholder: {
-            ProgressView()
-        }
-    }
-    
+        
     private var titleSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(movie.title)
